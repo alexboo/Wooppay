@@ -1,0 +1,24 @@
+{
+  "name": "alexboo/Wooppay",
+  "type": "library",
+  "description": "Payment with wooppay payment system",
+  "keywords": ["payment","wooppay"],
+  "homepage": "https://github.com/alexboo/Wooppay",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "Alexey Bulybin"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Alexboo\\Wooppay\\": "src/",
+      "Alexboo\\Wooppay\\Request\\": "src/request",
+      "Alexboo\\Wooppay\\Response\\": "src/response",
+      "Alexboo\\Wooppay\\Exception\\": "src/exception"
+    }
+  }
+}
