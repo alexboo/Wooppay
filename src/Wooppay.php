@@ -9,7 +9,6 @@ use Alexboo\Wooppay\Request\CashGetOperationDataRequest;
 use Alexboo\Wooppay\Request\CoreLoginRequest;
 use Alexboo\Wooppay\Response\BaseResponse;
 use Alexboo\Wooppay\Response\CashCreateInvoiceResponse;
-use Alexboo\Wooppay\Response\CashGetOperationDataResponse;
 use SoapClient;
 
 class Wooppay {
@@ -64,21 +63,27 @@ class Wooppay {
      */
     public function createInvoice(CashCreateInvoiceRequest $request)
     {
-        return $this->soap->cash_createInvoice($request);
+        return $this->cash_createInvoice($request);
     }
 
     /**
-     * Check that invoice is paid
-     * @param CashGetOperationDataRequest $request
-     * @return CashGetOperationDataResponse
+     * Get operation data
+     * @param int $operationId
+     * @return boolean
      */
-    public function isPaid(CashGetOperationDataRequest $request)
+    public function isPaid($operationId)
     {
-        return $this->soap->cash_getOperationData($request);
+        $request = new CashGetOperationDataRequest();
+        $request->operationId = [$operationId];
+        $data = $this->cash_getOperationData($request);
+        if ($data->response->records[0]->status == self::OPERATION_STATUS_DONE)
+            return true;
+
+        return false;
     }
 
     /**
-     * Call another methods
+     * Call method from SOAP
      * @param $name
      * @param $request
      * @return BaseResponse
