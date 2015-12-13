@@ -1,5 +1,5 @@
 {
-  "name": "alexboo/Wooppay",
+  "name": "alexboo/wooppay",
   "type": "library",
   "description": "Payment with wooppay payment system",
   "keywords": ["payment","wooppay"],
