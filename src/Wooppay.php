@@ -85,12 +85,12 @@ class Wooppay {
     /**
      * Call method from SOAP
      * @param $name
-     * @param $request
+     * @param $arguments
      * @return BaseResponse
      */
-    public function __call($name, $request)
+    public function __call($name, $arguments)
     {
-        return $this->soap->{$name}($request);
+        return $this->soap->{$name}($arguments);
     }
 
     private $soap;
