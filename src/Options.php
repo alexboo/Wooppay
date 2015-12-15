@@ -6,7 +6,7 @@ use Alexboo\Wooppay\Exception\WooppayException;
 
 class Options {
 
-    public function __constructor($login, $password, $test = false)
+    public function __construct($login, $password, $test = false)
     {
         if (empty($login) || empty($password)) {
             throw new WooppayException("Enter your login and password to access the service");

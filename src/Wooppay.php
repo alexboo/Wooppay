@@ -86,7 +86,7 @@ class Wooppay {
      */
     public function createInvoice(CashCreateInvoiceRequest $request)
     {
-        return $this->cash_createInvoice($request);
+        return $this->soap->cash_createInvoice($request);
     }
 
     /**
@@ -98,8 +98,8 @@ class Wooppay {
     {
         $request = new CashGetOperationDataRequest();
         $request->operationId = [$operationId];
-        $data = $this->cash_getOperationData($request);
-        if ($data->response->records[0]->status == self::OPERATION_STATUS_DONE)
+        $data = $this->soap->cash_getOperationData($request);
+        if ($data->response->records[0]->status == Reference::OPERATION_STATUS_DONE)
             return true;
 
         return false;
