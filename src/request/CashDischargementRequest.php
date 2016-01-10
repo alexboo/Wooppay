@@ -5,16 +5,16 @@ namespace Alexboo\Wooppay\Request;
 
 class CashDischargementRequest {
     /**
-     * @var string subjectFrom
+     * @var string $subjectFrom
      */
     public $subjectFrom;
     /**
-     * @var int accountFrom
+     * @var int $accountFrom
      */
     public $accountFrom;
 
     /**
-     * @var float amount
+     * @var float $amount
      */
     public $amount;
 }

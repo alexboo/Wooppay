@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CashTransferRequest
+class CashDeclineRequest
 {
     /**
      * @var int $operationId

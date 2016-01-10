@@ -4,35 +4,35 @@ namespace Alexboo\Wooppay\Request;
 
 class CashCreateOperationRequest {
     /**
-     * @var int type
+     * @var int $type
      */
     public $type;
     /**
-     * @var string receiver
+     * @var string $receiver
      */
     public $receiver;
     /**
-     * @var float amount
+     * @var float $amount
      */
     public $amount;
     /**
-     * @var string description
+     * @var string $description
      */
     public $description;
     /**
-     * @var int productId
+     * @var int $productId
      */
     public $productId;
     /**
-     * @var string service
+     * @var string $service
      */
     public $service;
     /**
-     * @var string fields
+     * @var string $fields
      */
     public $fields;
     /**
-     * @var int userGroup
+     * @var int $userGroup
      */
     public $userGroup;
 }

@@ -5,52 +5,52 @@ namespace Alexboo\Wooppay\Request;
 
 class CashGetTransfersRequest {
     /**
-     * @var int page
+     * @var int $page
      */
     public $page;
 
     /**
-     * @var int perPage
+     * @var int $perPage
      */
     public $perPage;
 
     /**
-     * @var int[] statuses
+     * @var int[] $statuses
      */
     public $statuses;
 
     /**
-     * @var int[] types
+     * @var int[] $types
      */
     public $types;
 
     /**
-     * @var int direction
+     * @var int $direction
      */
     public $direction;
 
     /**
-     * @var boolean reverse
+     * @var boolean $reverse
      */
     public $reverse;
 
     /**
-     * @var string secondSubject
+     * @var string $secondSubject
      */
     public $secondSubject;
 
     /**
-     * @var string dateFrom
+     * @var string $dateFrom
      */
     public $dateFrom;
 
     /**
-     * @var string dateTo
+     * @var string $dateTo
      */
     public $dateTo;
 
     /**
-     * @var int lastChanged
+     * @var int $lastChanged
      */
     public $lastChanged;
 }

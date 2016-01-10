@@ -1,9 +1,9 @@
 <?php
 
-namespace Alexboo\Wooppay\Request;
+namespace Alexboo\Wooppay\Response;
 
 
-class CashTransferRequest
+class CashRequestTransferResponseData
 {
     /**
      * @var int $operationId
