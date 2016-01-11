@@ -85,15 +85,35 @@ class Wooppay {
         }
 
         try {
-            $this->soap = new SoapClient($url, [
-                'login' => $options->getLogin(),
-                'password' => $options->getPassword()
-            ]);
+            $basicAccessAuthenticationParams = [];
+            if ($options->getServerLogin() !== null) {
+                $basicAccessAuthenticationParams = [
+                    'login' => $options->getServerLogin(),
+                    'password' => $options->getServerPassword()
+                ];
+            }
+
+            $this->soap = new SoapClient($url, $basicAccessAuthenticationParams);
         } catch (\Exception $e) {
             throw new WooppayException(self::ERROR_UNABLE_CONNECTION_TO_SERVICE);
         }
 
         $this->login($options->getLogin(), $options->getPassword());
+    }
+
+    /**
+     * Response to wooppay service
+     * @param bool|true $success -
+     */
+    public function response($success = true)
+    {
+        header('Content-Type: application/json');
+        $data = new \stdClass();
+        $data->data = 1;
+        if (!$success) {
+            $data->data = 0;
+        }
+        exit(json_encode($data));
     }
 
     /**
