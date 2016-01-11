@@ -105,7 +105,7 @@ class Wooppay {
      * Response to wooppay service
      * @param bool|true $success -
      */
-    public function response($success = true)
+    public static function response($success = true)
     {
         header('Content-Type: application/json');
         $data = new \stdClass();
