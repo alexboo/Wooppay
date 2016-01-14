@@ -79,7 +79,19 @@ class Wooppay {
     const ERROR_UNABLE_CONNECTION_TO_SERVICE = 'Unable to connect to the service';
     const ERROR_WRONG_LOGIN_OR_PASSWORD = 'Wrong login or password';
 
-    public function __construct(Options $options)
+    public function __construct(Options $options = null)
+    {
+        if ($options != null) {
+            $this->connect($options);
+        }
+    }
+
+    /**
+     * Connect to payment system
+     * @param Options $options
+     * @throws WooppayException
+     */
+    public function connect(Options $options)
     {
         $url = Reference::URI_API;
         if ($options->isTest()) {
