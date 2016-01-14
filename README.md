@@ -18,6 +18,9 @@ $wooppay =  new Wooppay();
 $options = new Options($login, $password, $basicAccessLogin, $basicAccesPassword, $isTest);
 $wooppay->connect($options);
 
+Еще можно так
+$wooppay =  new Wooppay(new Options($login, $password, $basicAccessLogin, $basicAccesPassword, $isTest));
+
 // Выставление счета;
 
  $request = new CashCreateInvoiceRequest([
@@ -40,10 +43,10 @@ if ($data->error_code == Reference::ERROR_NO_ERRORS) {
 if ($wooppay->isPaid($perationId())) {
     // do something
     
-    // Ответ сервер wooppay
+    // Ответ для сервер wooppay
     Wooppay::response(true);
 } else {
-    // Ответ сервер wooppay
+    // Ответ для сервер wooppay
     Wooppay::response(false);
 }
 
