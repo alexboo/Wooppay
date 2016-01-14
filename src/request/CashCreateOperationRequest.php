@@ -2,7 +2,7 @@
 
 namespace Alexboo\Wooppay\Request;
 
-class CashCreateOperationRequest {
+class CashCreateOperationRequest extends BaseRequest {
     /**
      * @var int $type
      */

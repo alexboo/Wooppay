@@ -2,6 +2,7 @@
 
 namespace Alexboo\Wooppay\Request;
 
-class CoreSmthRequest {
+class CoreSmthRequest  extends BaseRequest
+{
 
 }

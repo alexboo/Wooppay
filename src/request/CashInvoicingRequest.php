@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CashInvoicingRequest
+class CashInvoicingRequest extends BaseRequest
 {
     /**
      * @var string $subjectFrom

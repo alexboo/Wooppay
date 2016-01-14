@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class PayConfirmRequest
+class PayConfirmRequest extends BaseRequest
 {
     /**
      * @var string $PayCode

@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CoreGetServiceIDByNameRequest
+class CoreGetServiceIDByNameRequest extends BaseRequest
 {
     /**
      * @var string $service_name

@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class SystemGetConfigRequest
+class SystemGetConfigRequest extends BaseRequest
 {
 
 }

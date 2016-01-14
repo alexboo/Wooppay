@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class ServiceGetCategoriesRequest
+class ServiceGetCategoriesRequest extends BaseRequest
 {
     /**
      * @var int $parent

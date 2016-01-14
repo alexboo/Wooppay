@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CashCashOutRequest
+class CashCashOutRequest extends BaseRequest
 {
     /**
      * @var float $amount

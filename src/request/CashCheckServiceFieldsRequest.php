@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CashCheckServiceFieldsRequest
+class CashCheckServiceFieldsRequest extends BaseRequest
 {
     /**
      * @var string $service

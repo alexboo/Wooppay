@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CoreUserExistsRequest
+class CoreUserExistsRequest extends BaseRequest
 {
     /**
      * @var string $login

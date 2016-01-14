@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CashPrepaidCardRequest
+class CashPrepaidCardRequest extends BaseRequest
 {
     /**
      * @var float $amount

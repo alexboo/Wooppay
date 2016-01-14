@@ -1,6 +1,7 @@
 <?php
 namespace Alexboo\Wooppay\Request;
 
-class CoreLogoutRequest {
+class CoreLogoutRequest  extends BaseRequest
+{
 
 }

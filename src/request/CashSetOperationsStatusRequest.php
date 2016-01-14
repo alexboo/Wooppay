@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CashSetOperationsStatusRequest
+class CashSetOperationsStatusRequest extends BaseRequest
 {
     /**
      * @var CashSetOperationsStatusRequestRecord[] $records

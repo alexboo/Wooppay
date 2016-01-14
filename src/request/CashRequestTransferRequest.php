@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CashRequestTransferRequest
+class CashRequestTransferRequest extends BaseRequest
 {
     /**
      * @var string $login

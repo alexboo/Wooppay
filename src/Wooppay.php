@@ -64,6 +64,8 @@ use Alexboo\Wooppay\Response\CashReturnResponse;
 use Alexboo\Wooppay\Response\CashSetOperationsStatusResponse;
 use Alexboo\Wooppay\Response\CashTransferResponse;
 use Alexboo\Wooppay\Response\CoreGetServiceIDByNameResponse;
+use Alexboo\Wooppay\Response\CoreLoginResponse;
+use Alexboo\Wooppay\Response\CoreLoginResponseData;
 use Alexboo\Wooppay\Response\CoreSmthResponse;
 use Alexboo\Wooppay\Response\CoreUserExistsResponse;
 use Alexboo\Wooppay\Response\CoreUserSearchResponse;
@@ -98,20 +100,21 @@ class Wooppay {
 
     /**
      * Login to service
-     * @param $login
-     * @param $password
+     * @param $login - login in system
+     * @param $password - password is sytem
+     * @return CoreLoginResponse
      * @throws WooppayException
      */
     public function login($login, $password)
     {
-        $request = new CoreLoginRequest();
-        $request->username = $login;
-        $request->password = $password;
+        $request = new CoreLoginRequest(['username' => $login, 'password' => $password]);
 
         $data = $this->soap->core_login($request);
 
         if (!empty($data->response->session)) {
             $this->soap->__setCookie('session', $data->response->session);
+            $this->sessionData = $data;
+            return $data;
         } else {
             throw new WooppayException(self::ERROR_WRONG_LOGIN_OR_PASSWORD);
         }
@@ -144,8 +147,7 @@ class Wooppay {
      */
     public function isPaid($operationId)
     {
-        $request = new CashGetOperationDataRequest();
-        $request->operationId = [$operationId];
+        $request = new CashGetOperationDataRequest(['operationId' => [$operationId]]);
         $data = $this->soap->cash_getOperationData($request);
         if ($data->response->records[0]->status == Reference::OPERATION_STATUS_DONE)
             return true;
@@ -226,6 +228,7 @@ class Wooppay {
     }
 
     /**
+     * Get account balance
      * @return CashGetBalanceResponse
      */
     public function cash_getBalance()
@@ -360,6 +363,7 @@ class Wooppay {
     }
 
     /**
+     * Get operation information
      * @param CashGetOperationDataRequest $request
      * @return CashGetOperationDataResponse
      */
@@ -378,6 +382,7 @@ class Wooppay {
     }
 
     /**
+     * Create invoice
      * @param CashCreateInvoiceRequest $request
      * @return CashCreateInvoiceResponse
      */
@@ -387,6 +392,7 @@ class Wooppay {
     }
 
     /**
+     * Create invoice with extended parameters
      * @param CashCreateInvoiceExtendedRequest $request
      * @return CashCreateInvoiceResponse
      */
@@ -478,5 +484,17 @@ class Wooppay {
         return call_user_func_array([$this->soap, $name], $arguments);
     }
 
+    /**
+     * @return CoreLoginResponseData
+     */
+    public function getSessionData()
+    {
+        return $this->sessionData;
+    }
+
     private $soap;
+    /**
+     * @var CoreLoginResponseData
+     */
+    protected $sessionData;
 }

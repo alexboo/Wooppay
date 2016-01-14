@@ -3,7 +3,7 @@
 namespace Alexboo\Wooppay\Request;
 
 
-class CreateOperationRequest
+class CreateOperationRequest extends BaseRequest
 {
     /**
      * @var string $Login
