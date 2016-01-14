@@ -40,7 +40,7 @@ if ($data->error_code == Reference::ERROR_NO_ERRORS) {
 
 // Проверка оплаты счета
 
-if ($wooppay->isPaid($perationId())) {
+if ($wooppay->isPaid($operationId)) {
     // do something
     
     // Ответ для сервер wooppay об успешном проведении операции
