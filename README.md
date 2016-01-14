@@ -43,10 +43,10 @@ if ($data->error_code == Reference::ERROR_NO_ERRORS) {
 if ($wooppay->isPaid($perationId())) {
     // do something
     
-    // Ответ для сервер wooppay
+    // Ответ для сервер wooppay об успешном проведении операции
     Wooppay::response(true);
 } else {
-    // Ответ для сервер wooppay
+    // Ответ для сервер wooppay если произошла ошибка
     Wooppay::response(false);
 }
 
