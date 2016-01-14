@@ -47,19 +47,6 @@ class Reference {
     // request of payment
     const OPERATION_TYPE_REQUEST_OF_PAYMENT = 4;
 
-    // new
-    const OPERATIONS_STATUS_NEW = 1;
-    // under consideration
-    const OPERATIONS_STATUS_UNDER_CONSIDERATION = 2;
-    // rejected
-    const OPERATIONS_STATUS_REJECTED = 3;
-    // held
-    const OPERATIONS_STATUS_HELD = 4;
-    // reversed
-    const OPERATIONS_STATUS_REVERSED = 5;
-    //reverse
-    const OPERATIONS_STATUS_REVERSE = 6;
-
     // Not have some errors
     const ERROR_NO_ERRORS = 0;
 }
