@@ -485,6 +485,7 @@ class Wooppay {
     }
 
     /**
+     * Get current session data
      * @return CoreLoginResponseData
      */
     public function getSessionData()
