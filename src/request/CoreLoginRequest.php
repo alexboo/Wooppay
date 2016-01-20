@@ -2,7 +2,7 @@
 
 namespace Alexboo\Wooppay\Request;
 
-class CoreLoginRequest {
+class CoreLoginRequest extends BaseRequest {
     /**
      * Login in wooppay system
      * @var string $username

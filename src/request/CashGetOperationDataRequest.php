@@ -2,7 +2,7 @@
 
 namespace Alexboo\Wooppay\Request;
 
-class CashGetOperationDataRequest {
+class CashGetOperationDataRequest extends BaseRequest {
     /**
      * Id array operations
      * @var int[] $operationId
