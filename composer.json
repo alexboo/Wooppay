@@ -4,7 +4,7 @@
   "description": "Payment with wooppay payment system",
   "keywords": ["payment","wooppay"],
   "homepage": "https://github.com/alexboo/Wooppay",
-  "license": "GPLv2",
+  "license": "LGPL-3.0",
   "authors": [
     {
       "name": "Alexey Bulybin"
