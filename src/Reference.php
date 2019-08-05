@@ -12,7 +12,7 @@ namespace Alexboo\Wooppay;
 class Reference {
 
     const URI_API = "https://www.wooppay.com/api/1.0/wsdl";
-    const URI_API_TEST = 'https://www-test.wooppay.com/api/xml';
+    const URI_API_TEST = 'https://www.test.wooppay.com/api/wsdl';
 
     // New operation
     const OPERATION_STATUS_NEW = 1;
