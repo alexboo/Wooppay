@@ -8,19 +8,19 @@ class CashCreateInvoiceRequest extends BaseRequest {
      * @var int $referenceId
      * @soap
      */
-    public $reference_id;
+    public $referenceId;
     /**
      * The address to which the user will be redirected after payment
      * @var string $backUrl
      * @soap
      */
-    public $back_url;
+    public $backUrl;
     /**
      * A request that we send to you after successful payment
      * @var string $requestUrl
      * @soap
      */
-    public $request_url = '';
+    public $requestUrl = '';
     /**
      * Line - that sees the client in the form of payment
      * @var string $addInfo
@@ -44,13 +44,19 @@ class CashCreateInvoiceRequest extends BaseRequest {
      * @var $int $serviceType
      * @soap
      */
-    public $service_name = null;
+    public $serviceType = null;
+    /**
+     * Service name
+     * @var $int $serviceType
+     * @soap
+     */
+    public $serviceName = null;
     /**
      * Merchant name
      * @var $int $serviceType
      * @soap
      */
-    public $merchant_name = null;
+    public $merchantName = null;
     /**
      * Short mandatory comment that enters into the history of customer transactions
      * @var string $description
